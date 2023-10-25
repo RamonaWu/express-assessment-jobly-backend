@@ -25,7 +25,7 @@ const router = new express.Router();
  * Authorization required: Admin
  */
 
-router.post("/", ensureLoggedIn, isAdmin, async function (req, res, next) {
+router.post("/companies", ensureLoggedIn, isAdmin, async function (req, res, next) {
   try {
     const validator = jsonschema.validate(req.body, companyNewSchema);
     if (!validator.valid) {
