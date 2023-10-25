@@ -27,7 +27,7 @@ const router = new express.Router();
 
 //open for all, no authorization needed.
 
-router.get("/", async function (req, res, next) {
+router.get("/jobs", async function (req, res, next) {
     let q = req.query
     try {
         const validator = jsonschema.validate(q, jobSearchSchema)
